@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>memo on ucchiee's tech blog</title><link>https://ucchiee.com/tags/memo/</link><description>Recent content in memo on ucchiee's tech blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 18 Apr 2022 11:18:12 +0900</lastBuildDate><atom:link href="https://ucchiee.com/tags/memo/index.xml" rel="self" type="application/rss+xml"/><item><title>Decafを動かす時のメモ</title><link>https://ucchiee.com/posts/220418-decaf-build/</link><pubDate>Mon, 18 Apr 2022 11:18:12 +0900</pubDate><guid>https://ucchiee.com/posts/220418-decaf-build/</guid><description>
+DECAF: https://github.com/decaf-project/DECAF
+DECAFをビルドする時のメモをここに残す． 手順はレポジトリのWikiを参照．
+make ./configure make のmakeでこける． どうやら内部のpythonスクリプトがpython2.5以下の書き方をしていることに由来しているっぽい． 自分の環境に入っているpython2系はpython2.7． 2.5以下との互換性はない．
+とるべき道は2つ．pythonスクリプトを書き換えるか，python2.5以下を入れるか． とりあえずsyntax errorが出ているのでpythonスクリプトを変更してみる． syntax errorを全て取り除いた．try/except周りとprint周り．
+次は
+ModuleNotFoundError: No module named 'UserDict' これはpython2系でのみのモジュール． どうやらpython3系で動かしていることが直接の原因っぽい． ので，python2系を使えるように方針変更．
+各ツールのバージョン管理にはasdfを用いている．
+asdf install python 2.7.14 asdf local python 2.7.14 これでpythonがpython2.7.14を指すようになった．
+make 途中でWarningがたくさん出るが，落ちていないので大丈夫な感じなのだろうか． 3m59sで終了． 不具合があれば2.5以下にしたほうがいいかも．ひとまずこのまま進める．
+image QCOW formatのimageが必要らしい．
+ここからubuntu18.04の.imgファイルをダウンロード．
+VMI configuration for linux guest os にファイルをコピーしろと言っている． まだ起動もしていないんだが． imgファイルをいじれってこと？まさか．
+ひとまずここまで．</description></item></channel></rss>
