@@ -11,7 +11,9 @@ make 途中でWarningがたくさん出るが，落ちていないので大丈�
 image QCOW formatのimageが必要らしい．
 ここからubuntu18.04の.imgファイルをダウンロード．
 VMI configuration for linux guest os にファイルをコピーしろと言っている． まだ起動もしていないんだが． imgファイルをいじれってこと？まさか．
-ひとまずここまで．</description></item><item><title>hugo: found no layout file for "HTML" for kind...の解決方法</title><link>https://ucchiee.com/posts/220417-hugo-submodule/</link><pubDate>Sun, 17 Apr 2022 11:22:18 +0900</pubDate><guid>https://ucchiee.com/posts/220417-hugo-submodule/</guid><description>
+ひとまずここまで．
+起動してみる 以下のコマンドで一応起動を確認した:
+./qemu-system-i386 -monitor stdio -m 512 -netdev user,id=mynet -device rtl8139,netdev=mynet ../../disk-image/ubuntu-18.04-amd64.img</description></item><item><title>hugo: found no layout file for "HTML" for kind...の解決方法</title><link>https://ucchiee.com/posts/220417-hugo-submodule/</link><pubDate>Sun, 17 Apr 2022 11:22:18 +0900</pubDate><guid>https://ucchiee.com/posts/220417-hugo-submodule/</guid><description>
 hugo server 上記のコマンドでサーバーを立ち上げたときに，以下のWarningが出ることがある．
 WARN 2022/04/17 10:43:50 found no layout file for &amp;quot;HTML&amp;quot; for kind &amp;quot;home&amp;quot;: You should create a template file which matches Hugo Layouts Lookup Rules for this combination. themeのsubmoduleが初期化されてないことが原因なので，以下のコマンドで初期化して解決．
 git submodule update -i</description></item><item><title>「プログラミング言語C++」を読んで得た役に立たなそうな知識</title><link>https://ucchiee.com/posts/bjarne_tips/</link><pubDate>Mon, 11 Apr 2022 23:47:06 +0900</pubDate><guid>https://ucchiee.com/posts/bjarne_tips/</guid><description>
