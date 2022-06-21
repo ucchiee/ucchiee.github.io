@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>debug on ucchiee's tech blog</title><link>https://ucchiee.com/tags/debug/</link><description>Recent content in debug on ucchiee's tech blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 17 Apr 2022 11:22:18 +0900</lastBuildDate><atom:link href="https://ucchiee.com/tags/debug/index.xml" rel="self" type="application/rss+xml"/><item><title>hugo: found no layout file for "HTML" for kind...の解決方法</title><link>https://ucchiee.com/posts/220417-hugo-submodule/</link><pubDate>Sun, 17 Apr 2022 11:22:18 +0900</pubDate><guid>https://ucchiee.com/posts/220417-hugo-submodule/</guid><description>
-hugo server 上記のコマンドでサーバーを立ち上げたときに，以下のWarningが出ることがある．
-WARN 2022/04/17 10:43:50 found no layout file for &amp;quot;HTML&amp;quot; for kind &amp;quot;home&amp;quot;: You should create a template file which matches Hugo Layouts Lookup Rules for this combination. themeのsubmoduleが初期化されてないことが原因なので，以下のコマンドで初期化して解決．
-git submodule update -i</description></item></channel></rss>
+1hugo server 上記のコマンドでサーバーを立ち上げたときに，以下のWarningが出ることがある．
+1WARN 2022/04/17 10:43:50 found no layout file for &amp;#34;HTML&amp;#34; for kind &amp;#34;home&amp;#34;: You should create a template file which matches Hugo Layouts Lookup Rules for this combination. themeのsubmoduleが初期化されてないことが原因なので，以下のコマンドで初期化して解決．
+1git submodule update -i</description></item></channel></rss>
