@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>bash on ucchiee's tech blog</title><link>https://ucchiee.com/categories/bash/</link><description>Recent content in bash on ucchiee's tech blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 31 Jul 2022 14:46:07 +0900</lastBuildDate><atom:link href="https://ucchiee.com/categories/bash/index.xml" rel="self" type="application/rss+xml"/><item><title>find, sed, xargsを用いた一括リネーム</title><link>https://ucchiee.com/posts/find-sed-xargs/</link><pubDate>Sun, 31 Jul 2022 14:46:07 +0900</pubDate><guid>https://ucchiee.com/posts/find-sed-xargs/</guid><description>
+find, sed, xargsを用いた一括リネーム find, sed, xargsの基本的なオプションのみを使った有用な使い方について備忘録がてら残しておくことにする。
+find で対象ファイルを絞り込み 1find . -name &amp;#34;litmus_hit_*&amp;#34; glob 検索を行う。必要に応じて-maxdepthオプションを使う。
+sed でリネーム後の名前を生成 1find . -name &amp;#34;litmus_hit*&amp;#34; | sed -r &amp;#34;p;s/litmus_hit_([0-9]*).c/hit_litmus_\1.c/&amp;#34; キャプチャした文字列の参照は$1などではなく\1。 正規表現を使う場合は-rオプションを使うこと。 pコマンドを入れておくことにより、mv に渡す元の path を生成することができる。
+xargs mvで実際にリネーム 1find . -name &amp;#34;litmus_hit*&amp;#34; | sed -r &amp;#34;p;s/litmus_hit_([0-9]*).c/hit_litmus_\1.c/&amp;#34; | xargs -n2 mv xargsに渡すことにより、一括でリネーム。
+ひとこと xargsは便利。</description></item></channel></rss>
